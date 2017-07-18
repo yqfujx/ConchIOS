@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1040D5BF1F18A60C0036FCD3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1040D5BE1F18A60C0036FCD3 /* Extension.swift */; };
+		1040D5C11F18B8340036FCD3 /* ServiceCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1040D5C01F18B8340036FCD3 /* ServiceCenter.swift */; };
+		1040D5C41F18BD800036FCD3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1040D5C31F18BD800036FCD3 /* LoginViewController.swift */; };
 		1058124F1F15AF940022D472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058124E1F15AF940022D472 /* AppDelegate.swift */; };
 		105812511F15AF940022D472 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105812501F15AF940022D472 /* ViewController.swift */; };
 		105812541F15AF940022D472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105812521F15AF940022D472 /* Main.storyboard */; };
@@ -14,6 +17,20 @@
 		105812591F15AF940022D472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105812571F15AF940022D472 /* LaunchScreen.storyboard */; };
 		105812641F15AF940022D472 /* ConchIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105812631F15AF940022D472 /* ConchIOSTests.swift */; };
 		1058126F1F15AF940022D472 /* ConchIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058126E1F15AF940022D472 /* ConchIOSUITests.swift */; };
+		105812831F15B2D40022D472 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105812821F15B2D40022D472 /* NetworkService.swift */; };
+		105812881F15C13D0022D472 /* CommonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105812871F15C13D0022D472 /* CommonType.swift */; };
+		1058128A1F15C52C0022D472 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105812891F15C52C0022D472 /* AppConfig.swift */; };
+		1058128C1F15D2EE0022D472 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058128B1F15D2EE0022D472 /* AuthorizationService.swift */; };
+		10837E291F1C51E000B84786 /* ExaminationItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10837E281F1C51E000B84786 /* ExaminationItemCell.swift */; };
+		10AEB2D21F1B5B7A00E5B801 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AEB2D11F1B5B7A00E5B801 /* DetailViewController.swift */; };
+		10FB3FD21F192736000F6453 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FB3FD01F192736000F6453 /* bg.png */; };
+		10FB3FD31F192736000F6453 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FB3FD11F192736000F6453 /* bg@2x.png */; };
+		10FB3FD51F19AFD2000F6453 /* ExaminationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FB3FD41F19AFD2000F6453 /* ExaminationService.swift */; };
+		10FB3FD71F19CA91000F6453 /* ExaminationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FB3FD61F19CA91000F6453 /* ExaminationModel.swift */; };
+		10FB3FD91F1A6DA2000F6453 /* AuthenticateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FB3FD81F1A6DA2000F6453 /* AuthenticateViewController.swift */; };
+		1444196037C7CF7240629269 /* Pods_ConchIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9145DEB14B0C95F0448F3F3 /* Pods_ConchIOSUITests.framework */; };
+		2F4C793153EB12DE5AD4FB1E /* Pods_ConchIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FFB732302882A4865A0F5D /* Pods_ConchIOSTests.framework */; };
+		34440A5EAF45BC7D929BC934 /* Pods_ConchIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3D31842CB5789F62FE9FA2 /* Pods_ConchIOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1040D5BE1F18A60C0036FCD3 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		1040D5C01F18B8340036FCD3 /* ServiceCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCenter.swift; sourceTree = "<group>"; };
+		1040D5C31F18BD800036FCD3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1058124B1F15AF940022D472 /* ConchIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConchIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1058124E1F15AF940022D472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		105812501F15AF940022D472 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +67,27 @@
 		1058126A1F15AF940022D472 /* ConchIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConchIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1058126E1F15AF940022D472 /* ConchIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConchIOSUITests.swift; sourceTree = "<group>"; };
 		105812701F15AF940022D472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1058127C1F15B2580022D472 /* ConchIOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ConchIOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		105812821F15B2D40022D472 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		105812871F15C13D0022D472 /* CommonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonType.swift; sourceTree = "<group>"; };
+		105812891F15C52C0022D472 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		1058128B1F15D2EE0022D472 /* AuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
+		10837E281F1C51E000B84786 /* ExaminationItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExaminationItemCell.swift; sourceTree = "<group>"; };
+		10AEB2D11F1B5B7A00E5B801 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		10FB3FD01F192736000F6453 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		10FB3FD11F192736000F6453 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
+		10FB3FD41F19AFD2000F6453 /* ExaminationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExaminationService.swift; sourceTree = "<group>"; };
+		10FB3FD61F19CA91000F6453 /* ExaminationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExaminationModel.swift; sourceTree = "<group>"; };
+		10FB3FD81F1A6DA2000F6453 /* AuthenticateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateViewController.swift; sourceTree = "<group>"; };
+		28077F43A768C2DF19399C85 /* Pods-ConchIOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConchIOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConchIOSTests/Pods-ConchIOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		29F42F690B30FC268FC52B75 /* Pods-ConchIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConchIOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConchIOSUITests/Pods-ConchIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4AA9783BB15B5DDFA0B1E719 /* Pods-ConchIOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConchIOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConchIOSUITests/Pods-ConchIOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		610D840A277B723C8317366F /* Pods-ConchIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConchIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConchIOS/Pods-ConchIOS.release.xcconfig"; sourceTree = "<group>"; };
+		8A3D31842CB5789F62FE9FA2 /* Pods_ConchIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConchIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAEFE30652347D00774355A9 /* Pods-ConchIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConchIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConchIOS/Pods-ConchIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C9145DEB14B0C95F0448F3F3 /* Pods_ConchIOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConchIOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3FFB732302882A4865A0F5D /* Pods_ConchIOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConchIOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6894AA453987A3701B8E1A0 /* Pods-ConchIOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConchIOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConchIOSTests/Pods-ConchIOSTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34440A5EAF45BC7D929BC934 /* Pods_ConchIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4C793153EB12DE5AD4FB1E /* Pods_ConchIOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,19 +111,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1444196037C7CF7240629269 /* Pods_ConchIOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1040D5C21F18BD170036FCD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				105812501F15AF940022D472 /* ViewController.swift */,
+				1040D5C31F18BD800036FCD3 /* LoginViewController.swift */,
+				10FB3FD81F1A6DA2000F6453 /* AuthenticateViewController.swift */,
+				10AEB2D11F1B5B7A00E5B801 /* DetailViewController.swift */,
+				10837E281F1C51E000B84786 /* ExaminationItemCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		105812421F15AF940022D472 = {
 			isa = PBXGroup;
 			children = (
+				10FB3FCF1F192736000F6453 /* Resource */,
 				1058124D1F15AF940022D472 /* ConchIOS */,
 				105812621F15AF940022D472 /* ConchIOSTests */,
 				1058126D1F15AF940022D472 /* ConchIOSUITests */,
 				1058124C1F15AF940022D472 /* Products */,
+				B904CC84363B3CCE0F1A0FF4 /* Pods */,
+				B620918BB17339FD23DB4D3C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +156,14 @@
 		1058124D1F15AF940022D472 /* ConchIOS */ = {
 			isa = PBXGroup;
 			children = (
+				1040D5C21F18BD170036FCD3 /* View */,
+				105812851F15C0FF0022D472 /* Model */,
+				105812811F15B2920022D472 /* Service */,
+				105812801F15B27A0022D472 /* Support */,
 				1058124E1F15AF940022D472 /* AppDelegate.swift */,
-				105812501F15AF940022D472 /* ViewController.swift */,
 				105812521F15AF940022D472 /* Main.storyboard */,
-				105812551F15AF940022D472 /* Assets.xcassets */,
 				105812571F15AF940022D472 /* LaunchScreen.storyboard */,
-				1058125A1F15AF940022D472 /* Info.plist */,
+				105812891F15C52C0022D472 /* AppConfig.swift */,
 			);
 			path = ConchIOS;
 			sourceTree = "<group>";
@@ -125,6 +186,69 @@
 			path = ConchIOSUITests;
 			sourceTree = "<group>";
 		};
+		105812801F15B27A0022D472 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				105812551F15AF940022D472 /* Assets.xcassets */,
+				1058125A1F15AF940022D472 /* Info.plist */,
+				1058127C1F15B2580022D472 /* ConchIOS-Bridging-Header.h */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		105812811F15B2920022D472 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				105812821F15B2D40022D472 /* NetworkService.swift */,
+				1058128B1F15D2EE0022D472 /* AuthorizationService.swift */,
+				1040D5C01F18B8340036FCD3 /* ServiceCenter.swift */,
+				10FB3FD41F19AFD2000F6453 /* ExaminationService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		105812851F15C0FF0022D472 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				105812871F15C13D0022D472 /* CommonType.swift */,
+				1040D5BE1F18A60C0036FCD3 /* Extension.swift */,
+				10FB3FD61F19CA91000F6453 /* ExaminationModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		10FB3FCF1F192736000F6453 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				10FB3FD01F192736000F6453 /* bg.png */,
+				10FB3FD11F192736000F6453 /* bg@2x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		B620918BB17339FD23DB4D3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A3D31842CB5789F62FE9FA2 /* Pods_ConchIOS.framework */,
+				D3FFB732302882A4865A0F5D /* Pods_ConchIOSTests.framework */,
+				C9145DEB14B0C95F0448F3F3 /* Pods_ConchIOSUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B904CC84363B3CCE0F1A0FF4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BAEFE30652347D00774355A9 /* Pods-ConchIOS.debug.xcconfig */,
+				610D840A277B723C8317366F /* Pods-ConchIOS.release.xcconfig */,
+				28077F43A768C2DF19399C85 /* Pods-ConchIOSTests.debug.xcconfig */,
+				D6894AA453987A3701B8E1A0 /* Pods-ConchIOSTests.release.xcconfig */,
+				4AA9783BB15B5DDFA0B1E719 /* Pods-ConchIOSUITests.debug.xcconfig */,
+				29F42F690B30FC268FC52B75 /* Pods-ConchIOSUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +256,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 105812731F15AF940022D472 /* Build configuration list for PBXNativeTarget "ConchIOS" */;
 			buildPhases = (
+				C1930E39BD335CE639985AD0 /* [CP] Check Pods Manifest.lock */,
 				105812471F15AF940022D472 /* Sources */,
 				105812481F15AF940022D472 /* Frameworks */,
 				105812491F15AF940022D472 /* Resources */,
+				60BFF1287429540F0583B860 /* [CP] Embed Pods Frameworks */,
+				DED7657E4F80F96C12403C7A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +276,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 105812761F15AF940022D472 /* Build configuration list for PBXNativeTarget "ConchIOSTests" */;
 			buildPhases = (
+				1CD4DFA1D56D5C7F38F3D181 /* [CP] Check Pods Manifest.lock */,
 				1058125B1F15AF940022D472 /* Sources */,
 				1058125C1F15AF940022D472 /* Frameworks */,
 				1058125D1F15AF940022D472 /* Resources */,
+				44CFDD6CE4321B1F91673F5E /* [CP] Embed Pods Frameworks */,
+				FFC8A97900FED9F2B5DD15D7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +297,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 105812791F15AF940022D472 /* Build configuration list for PBXNativeTarget "ConchIOSUITests" */;
 			buildPhases = (
+				A50ED6FDC6C9786E3D99ACEE /* [CP] Check Pods Manifest.lock */,
 				105812661F15AF940022D472 /* Sources */,
 				105812671F15AF940022D472 /* Frameworks */,
 				105812681F15AF940022D472 /* Resources */,
+				98A65E7D278505C835589219 /* [CP] Embed Pods Frameworks */,
+				DD7B8B2D8357247FE565301D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,6 +327,7 @@
 					1058124A1F15AF940022D472 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 6JSJY22BTE;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					1058125E1F15AF940022D472 = {
@@ -237,7 +371,9 @@
 			files = (
 				105812591F15AF940022D472 /* LaunchScreen.storyboard in Resources */,
 				105812561F15AF940022D472 /* Assets.xcassets in Resources */,
+				10FB3FD21F192736000F6453 /* bg.png in Resources */,
 				105812541F15AF940022D472 /* Main.storyboard in Resources */,
+				10FB3FD31F192736000F6453 /* bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,12 +393,162 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1CD4DFA1D56D5C7F38F3D181 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		44CFDD6CE4321B1F91673F5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConchIOSTests/Pods-ConchIOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60BFF1287429540F0583B860 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConchIOS/Pods-ConchIOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98A65E7D278505C835589219 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConchIOSUITests/Pods-ConchIOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A50ED6FDC6C9786E3D99ACEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C1930E39BD335CE639985AD0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DD7B8B2D8357247FE565301D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConchIOSUITests/Pods-ConchIOSUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DED7657E4F80F96C12403C7A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConchIOS/Pods-ConchIOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFC8A97900FED9F2B5DD15D7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConchIOSTests/Pods-ConchIOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		105812471F15AF940022D472 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10AEB2D21F1B5B7A00E5B801 /* DetailViewController.swift in Sources */,
+				1040D5C41F18BD800036FCD3 /* LoginViewController.swift in Sources */,
+				10837E291F1C51E000B84786 /* ExaminationItemCell.swift in Sources */,
+				1040D5C11F18B8340036FCD3 /* ServiceCenter.swift in Sources */,
 				105812511F15AF940022D472 /* ViewController.swift in Sources */,
+				1058128A1F15C52C0022D472 /* AppConfig.swift in Sources */,
+				1040D5BF1F18A60C0036FCD3 /* Extension.swift in Sources */,
+				10FB3FD51F19AFD2000F6453 /* ExaminationService.swift in Sources */,
+				10FB3FD71F19CA91000F6453 /* ExaminationModel.swift in Sources */,
+				105812831F15B2D40022D472 /* NetworkService.swift in Sources */,
+				1058128C1F15D2EE0022D472 /* AuthorizationService.swift in Sources */,
+				105812881F15C13D0022D472 /* CommonType.swift in Sources */,
+				10FB3FD91F1A6DA2000F6453 /* AuthenticateViewController.swift in Sources */,
 				1058124F1F15AF940022D472 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,32 +699,40 @@
 		};
 		105812741F15AF940022D472 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAEFE30652347D00774355A9 /* Pods-ConchIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6JSJY22BTE;
 				INFOPLIST_FILE = ConchIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zonjli.ConchIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ConchIOS/ConchIOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		105812751F15AF940022D472 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 610D840A277B723C8317366F /* Pods-ConchIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6JSJY22BTE;
 				INFOPLIST_FILE = ConchIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zonjli.ConchIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ConchIOS/ConchIOS-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		105812771F15AF940022D472 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28077F43A768C2DF19399C85 /* Pods-ConchIOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -454,6 +748,7 @@
 		};
 		105812781F15AF940022D472 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6894AA453987A3701B8E1A0 /* Pods-ConchIOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -469,6 +764,7 @@
 		};
 		1058127A1F15AF940022D472 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AA9783BB15B5DDFA0B1E719 /* Pods-ConchIOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 6JSJY22BTE;
@@ -483,6 +779,7 @@
 		};
 		1058127B1F15AF940022D472 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29F42F690B30FC268FC52B75 /* Pods-ConchIOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 6JSJY22BTE;
@@ -514,6 +811,7 @@
 				105812751F15AF940022D472 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		105812761F15AF940022D472 /* Build configuration list for PBXNativeTarget "ConchIOSTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +820,7 @@
 				105812781F15AF940022D472 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		105812791F15AF940022D472 /* Build configuration list for PBXNativeTarget "ConchIOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +829,7 @@
 				1058127B1F15AF940022D472 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
