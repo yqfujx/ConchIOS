@@ -49,6 +49,7 @@ protocol IExaminationRepository {
     func append(from keyValuePairsArray: [[String: Any]]) ->Int
     func append(from keyValuePair: [String: Any]) ->Bool
     func update(item: ExaminationItem) ->Void
+    func removeAll() ->Void
 }
 
 class ExaminationRepository: IExaminationRepository {
@@ -121,6 +122,10 @@ class ExaminationRepository: IExaminationRepository {
         if let index = _repo.index(where: { elem  in elem.id == item.id }) {
             _repo[index] = item
         }
+    }
+    
+    func removeAll() -> Void {
+        _repo = []
     }
 }
 

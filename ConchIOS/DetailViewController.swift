@@ -49,6 +49,8 @@ class DetailViewController: UITableViewController {
                 self?.show(item: (self?.item)!)
             }
             else {
+                self?.approveBtn.isEnabled = true
+                self?.rejectBtn.isEnabled = true
                 if error!.code == ResponseCode.unauthorized.rawValue {
                     AuthorizationService.service.authenticate(completion: nil)
                 }
@@ -70,7 +72,7 @@ class DetailViewController: UITableViewController {
         case .pending:
             self.statusLabel.text = "待处理"
         case .approved:
-            self.statusLabel.text = "同意补包"
+            self.statusLabel.text = "已批准补包"
         case .rejected:
             self.statusLabel.text = "不予补包"
         }

@@ -21,6 +21,8 @@
 		105812881F15C13D0022D472 /* CommonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105812871F15C13D0022D472 /* CommonType.swift */; };
 		1058128A1F15C52C0022D472 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105812891F15C52C0022D472 /* AppConfig.swift */; };
 		1058128C1F15D2EE0022D472 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058128B1F15D2EE0022D472 /* AuthorizationService.swift */; };
+		105B86B11F1F0C5700506160 /* large_glyph_empty_queue.png in Resources */ = {isa = PBXBuildFile; fileRef = 105B86AF1F1F0C5700506160 /* large_glyph_empty_queue.png */; };
+		105B86B21F1F0C5700506160 /* large_glyph_empty_queue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 105B86B01F1F0C5700506160 /* large_glyph_empty_queue@2x.png */; };
 		10837E291F1C51E000B84786 /* ExaminationItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10837E281F1C51E000B84786 /* ExaminationItemCell.swift */; };
 		10AEB2D21F1B5B7A00E5B801 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AEB2D11F1B5B7A00E5B801 /* DetailViewController.swift */; };
 		10FB3FD21F192736000F6453 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FB3FD01F192736000F6453 /* bg.png */; };
@@ -72,6 +74,8 @@
 		105812871F15C13D0022D472 /* CommonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonType.swift; sourceTree = "<group>"; };
 		105812891F15C52C0022D472 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		1058128B1F15D2EE0022D472 /* AuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
+		105B86AF1F1F0C5700506160 /* large_glyph_empty_queue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = large_glyph_empty_queue.png; sourceTree = "<group>"; };
+		105B86B01F1F0C5700506160 /* large_glyph_empty_queue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "large_glyph_empty_queue@2x.png"; sourceTree = "<group>"; };
 		10837E281F1C51E000B84786 /* ExaminationItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExaminationItemCell.swift; sourceTree = "<group>"; };
 		10AEB2D11F1B5B7A00E5B801 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		10FB3FD01F192736000F6453 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
@@ -220,6 +224,8 @@
 		10FB3FCF1F192736000F6453 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				105B86AF1F1F0C5700506160 /* large_glyph_empty_queue.png */,
+				105B86B01F1F0C5700506160 /* large_glyph_empty_queue@2x.png */,
 				10FB3FD01F192736000F6453 /* bg.png */,
 				10FB3FD11F192736000F6453 /* bg@2x.png */,
 			);
@@ -369,7 +375,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				105B86B11F1F0C5700506160 /* large_glyph_empty_queue.png in Resources */,
 				105812591F15AF940022D472 /* LaunchScreen.storyboard in Resources */,
+				105B86B21F1F0C5700506160 /* large_glyph_empty_queue@2x.png in Resources */,
 				105812561F15AF940022D472 /* Assets.xcassets in Resources */,
 				10FB3FD21F192736000F6453 /* bg.png in Resources */,
 				105812541F15AF940022D472 /* Main.storyboard in Resources */,
@@ -705,6 +713,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6JSJY22BTE;
 				INFOPLIST_FILE = ConchIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zonjli.ConchIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -722,6 +731,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6JSJY22BTE;
 				INFOPLIST_FILE = ConchIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zonjli.ConchIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";

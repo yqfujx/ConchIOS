@@ -29,7 +29,10 @@ class ExaminationService: NSObject {
             if success {
                 let result = dictionary![ResponseContentKey.result.rawValue] as! Int
                 if result == ResponseCode.success.rawValue {
-                    if let data = dictionary![ResponseContentKey.data.rawValue] as? [[String: Any]]{
+                    if let data = dictionary![ResponseContentKey.data.rawValue] as? [[String: Any]] {
+                        // 暂不支持追加方式
+                        self.repository.removeAll()
+                        
                         if self.repository.append(from: data) < 0 {
                             boolArg = false
                             errorArg = SysError(domain: ErrorDomain.ExaminationService.rawValue, code: ErrorCode.badData.rawValue, userInfo: nil)

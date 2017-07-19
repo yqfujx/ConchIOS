@@ -8,10 +8,20 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: - 成员
     private let service = ExaminationService.service
     private var selectedIndex: IndexPath?
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var refreshBtn: UIButton!
+    @IBOutlet weak var refreshBtnItem: UIBarButtonItem!
+    @IBOutlet weak var bgView: UIView!
+    
+    // MARK: - 事件
+    @IBAction func refreshBtnTaped(_ sender: Any?) {
+        self.requestData()
+    }
     
     // MARK: - 方法
     
@@ -20,9 +30,13 @@ class ViewController: UITableViewController {
      */
     func authenticate() -> Void {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        self.refreshBtn.isEnabled = false
+        self.refreshBtnItem.isEnabled = false
         
         AuthorizationService.service.authenticate(completion: { (success: Bool, error: NSError?) in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            self.refreshBtn.isEnabled = true
+            self.refreshBtnItem.isEnabled = true
             
             if success {
                 self.requestData()
@@ -46,9 +60,13 @@ class ViewController: UITableViewController {
      */
     func requestData() ->Void  {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        self.refreshBtn.isEnabled = false
+        self.refreshBtnItem.isEnabled = false
         
         self.service.requestData { (success: Bool, error: SysError?) in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            self.refreshBtn.isEnabled = true
+            self.refreshBtnItem.isEnabled = true
             
             if success {
                 self.tableView.reloadData()
@@ -106,17 +124,17 @@ class ViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let num = self.service.repository.count
-        tableView.separatorStyle = num > 0 ? .singleLine :  .none
+        tableView.isHidden = (num <= 0)
         return num
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ExaminationItemCell
         let item = self.service.repository.item(at: indexPath.row)
         var color = UIColor.darkText
@@ -136,7 +154,7 @@ class ViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedIndex = indexPath
     }
     

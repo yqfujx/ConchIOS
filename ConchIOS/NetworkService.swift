@@ -11,6 +11,7 @@ import AFNetworking
 
 class NetworkService: AFHTTPSessionManager {
     // MARK: - 成员
+    private var sendDispatchQueue: DispatchQueue!
     
     // MARK: - 属性
     static let service = NetworkService(baseURL: URL(string: AppConfig.serverHost))
@@ -19,6 +20,8 @@ class NetworkService: AFHTTPSessionManager {
         super.init(baseURL: url, sessionConfiguration: configuration)
         self.requestSerializer = AFJSONRequestSerializer()
         self.responseSerializer = AFJSONResponseSerializer()
+        
+        self.sendDispatchQueue = DispatchQueue(label: "NetworkService send dispatch queue", qos: .userInitiated, attributes: .concurrent)
     }
     
     internal required init?(coder aDecoder: NSCoder) {
@@ -28,7 +31,8 @@ class NetworkService: AFHTTPSessionManager {
     /**
      发送HTTP请求
      */
-    func send(request: Request, completionQueue: OperationQueue, completion: ((Bool, [String: Any]?, SysError?) ->Void)?) -> Bool {
+   
+    func send(request: Request, completionQueue: OperationQueue?, completion: ((Bool, [String: Any]?, SysError?) ->Void)?) -> Bool {
         if request.requiredAuth, let token = AuthorizationService.service.sessionToken {
             self.requestSerializer.setValue("\(token)", forHTTPHeaderField: "token")
         }
@@ -38,13 +42,13 @@ class NetworkService: AFHTTPSessionManager {
         
         let success = {(task: URLSessionDataTask, data: Any?) in
             if let dictionary = data as? [String : Any],  let _ = dictionary[ResponseContentKey.result.rawValue] as? Int {
-                completionQueue.addOperation {
+                completionQueue?.addOperation {
                     completion?(true, dictionary, nil)
                 }
             }
             else {
                 let error = SysError(domain: ErrorDomain.NetworkService.rawValue, code: ErrorCode.badData.rawValue)
-                completionQueue.addOperation {
+                completionQueue?.addOperation {
                     completion?(false, nil, error)
                 }
             }
@@ -62,26 +66,31 @@ class NetworkService: AFHTTPSessionManager {
                 sysError = SysError(error: error)
             }
             
-            completionQueue.addOperation {
+            completionQueue?.addOperation {
                 completion?(false, nil, sysError)
             }
         }
         
         let (method, path, params) = request.api
         let url = URL(string: path, relativeTo: self.baseURL)?.absoluteString
+        let flag: DispatchWorkItemFlags = request.isBarrier ? .barrier : .inheritQoS // 身份验证需要以独占方式调用
         
-        switch method {
-        case .GET:
-            _ = self.get(url!, parameters: params, progress: nil, success: success, failure: failure)
-        case .POST:
-            _ = self.post(url!, parameters: params, progress: nil, success: success, failure: failure)
-        case .PUT:
-            _ = self.put(url!, parameters: params, success: success, failure: failure)
-        case .PATCH:
-            _ = self.patch(url!, parameters: params, success: success, failure: failure)
-        case .DELETE:
-            _ = self.delete(url!, parameters: params, success: success, failure: failure)
+        let work = DispatchWorkItem(qos: .userInitiated, flags: flag) {
+            switch method {
+            case .GET:
+                _ = self.get(url!, parameters: params, progress: nil, success: success, failure: failure)
+            case .POST:
+                _ = self.post(url!, parameters: params, progress: nil, success: success, failure: failure)
+            case .PUT:
+                _ = self.put(url!, parameters: params, success: success, failure: failure)
+            case .PATCH:
+                _ = self.patch(url!, parameters: params, success: success, failure: failure)
+            case .DELETE:
+                _ = self.delete(url!, parameters: params, success: success, failure: failure)
+            }
         }
+        self.sendDispatchQueue.async(execute: work)
+        
         return true
     }
     

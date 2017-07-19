@@ -9,10 +9,12 @@
 import UIKit
 
 class AuthorizationService: NSObject {
-
+    // 变量
+    
     // MARK: - 属性
     //
     static let service = AuthorizationService()
+    var operationQueue: OperationQueue!
     
     var userID: String? {
         get {
@@ -68,9 +70,17 @@ class AuthorizationService: NSObject {
         }
     }
     
+    override init() {
+        self.operationQueue = OperationQueue()
+        self.operationQueue.name = "Authorication service operation queue"
+        self.operationQueue.qualityOfService = .userInitiated
+        self.operationQueue.maxConcurrentOperationCount = 1
+    }
+    
     // MARK: - 方法
     //
     func authenticate(userID: String, pwd: String, completion: ((Bool, NSError?) -> Void)?) -> Void {
+        
         let request = Request.login(userID, pwd, client, self.appVersion, self.deviceToken)
         
         _ = NetworkService.service.send(request: request) { (success, dictionary, error) in
@@ -99,11 +109,11 @@ class AuthorizationService: NSObject {
                     let error = SysError(domain: ErrorDomain.AuthorizationService.rawValue, code: result)
                     completion?(false, error)
                 }
-            }
+            } // if success
             else {
                 completion?(false, error)
             }
-        }
+        } // closure
     }
     
     func authenticate(completion: ((Bool, NSError?) -> Void)?) -> Void {

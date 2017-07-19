@@ -35,6 +35,17 @@ enum Request {
         }
     }
     
+    var isBarrier: Bool {
+        get {
+            switch self {
+            case .login(_, _, _, _, _):
+                return true
+            default:
+                return false
+            }
+        }
+    }
+    
     var api: (HttpMethod, String, [String: Any]?) {
         var method: HttpMethod!
         var path = ""
