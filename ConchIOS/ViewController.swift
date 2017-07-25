@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: - 成员
-    private let service = ExaminationService.service
+    private let service = ServiceCenter.examinationService
     private var selectedIndex: IndexPath?
     
     @IBOutlet weak var tableView: UITableView!
@@ -19,6 +19,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var bgView: UIView!
     
     // MARK: - 事件
+    @IBAction func logOut(_ sender: Any?) {
+        
+        let alert = UIAlertController(title: nil, message: "确定要退出当前帐号吗？", preferredStyle: .alert)
+        let positive = UIAlertAction(title: "确定", style: .default) { (actiion: UIAlertAction) in
+            ServiceCenter.cancel()
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "LoginScene") as! LoginViewController
+            controller.doneHandler = { [unowned self] in
+                controller.dismiss(animated: true, completion: nil)
+                
+                self.requestData()
+            }
+            self.present(controller, animated: false, completion: nil)
+        }
+        alert.addAction(positive)
+        let negative = UIAlertAction(title: "取消", style: .cancel) { (action: UIAlertAction) in
+            
+        }
+        alert.addAction(negative)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func refreshBtnTaped(_ sender: Any?) {
         self.requestData()
     }
@@ -33,7 +54,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.refreshBtn.isEnabled = false
         self.refreshBtnItem.isEnabled = false
         
-        AuthorizationService.service.authenticate(completion: { (success: Bool, error: NSError?) in
+        ServiceCenter.authorizationService.authenticate(completion: { (success: Bool, error: NSError?) in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             self.refreshBtn.isEnabled = true
             self.refreshBtnItem.isEnabled = true
@@ -75,7 +96,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 // 提示错误信息
                 debugPrint("\(String(describing: error?.localizedDescription))")
                 if error!.code == ResponseCode.unauthorized.rawValue {
-                    AuthorizationService.service.authenticate(completion: nil)
+                    ServiceCenter.authorizationService.authenticate(completion: nil)
                 }
             }
         }
@@ -87,7 +108,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Do any additional setup after loading the view, typically from a nib.
         self.title = "待审清单"
         
-        let auth = AuthorizationService.service
+        let auth = ServiceCenter.authorizationService
         // 未曾登录过要先登录
         if !auth.authenticated {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "LoginScene") as! LoginViewController

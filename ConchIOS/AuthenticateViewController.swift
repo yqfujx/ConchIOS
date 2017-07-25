@@ -21,7 +21,7 @@ class AuthenticateViewController: UIViewController {
         self.authenticateBtn.isEnabled = false
         self.activityIndicator.startAnimating()
         
-        AuthorizationService.service.authenticate(completion: { (success: Bool, error: NSError?) in
+        ServiceCenter.authorizationService.authenticate(completion: { (success: Bool, error: NSError?) in
             if success {
                 self.doneBlock?()
             }

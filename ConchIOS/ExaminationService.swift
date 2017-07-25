@@ -11,18 +11,21 @@ import UIKit
 class ExaminationService: NSObject {
     private let operationQueue: OperationQueue!
     
-    static let service = ExaminationService()
-    let repository: IExaminationRepository! = ExaminationRepository()
+     let repository: IExaminationRepository! = ExaminationRepository()
     
     override init() {
         self.operationQueue = OperationQueue()
         self.operationQueue.name = "ExaminationServiceQueue"
     }
+    
+    func cancel() -> Void {
+        self.operationQueue.cancelAllOperations()
+    }
 
     func requestData(completion: ((Bool, SysError?) ->Void)?) -> Void {
         let request = Request.allExamination        
         
-        _ = NetworkService.service.send(request: request, completionQueue: self.operationQueue, completion: { (success: Bool, dictionary: [String: Any]?, error: NSError?) in
+        _ = ServiceCenter.networkService.send(request: request, completionQueue: self.operationQueue, completion: { (success: Bool, dictionary: [String: Any]?, error: NSError?) in
             var boolArg = true
             var errorArg: SysError?
             
@@ -60,9 +63,9 @@ class ExaminationService: NSObject {
     }
     
     func examine(item: ExaminationItem, status: ExaminationItem.Status, completion: ((Bool, ExaminationItem?, SysError?) ->Void)?) -> Void {
-        let request = Request.examine(item.id, status.rawValue, AuthorizationService.service.userID!)
+        let request = Request.examine(item.id, status.rawValue, ServiceCenter.authorizationService.userID!)
         
-        _ = NetworkService.service.send(request: request, completion: { (success: Bool, dictionary: [String : Any]?, error: SysError?) in
+        _ = ServiceCenter.networkService.send(request: request, completion: { (success: Bool, dictionary: [String : Any]?, error: SysError?) in
             if success {
                 let result = dictionary![ResponseContentKey.result.rawValue] as! Int
                 if result != ResponseCode.success.rawValue {

@@ -13,9 +13,6 @@ class AuthorizationService: NSObject {
     
     // MARK: - 属性
     //
-    static let service = AuthorizationService()
-    var operationQueue: OperationQueue!
-    
     var userID: String? {
         get {
             return AppConfig.userID
@@ -70,20 +67,13 @@ class AuthorizationService: NSObject {
         }
     }
     
-    override init() {
-        self.operationQueue = OperationQueue()
-        self.operationQueue.name = "Authorication service operation queue"
-        self.operationQueue.qualityOfService = .userInitiated
-        self.operationQueue.maxConcurrentOperationCount = 1
-    }
-    
     // MARK: - 方法
     //
     func authenticate(userID: String, pwd: String, completion: ((Bool, NSError?) -> Void)?) -> Void {
         
         let request = Request.login(userID, pwd, client, self.appVersion, self.deviceToken)
         
-        _ = NetworkService.service.send(request: request) { (success, dictionary, error) in
+        _ = ServiceCenter.networkService.send(request: request) { (success, dictionary, error) in
             if success {
                 let result = dictionary![ResponseContentKey.result.rawValue] as! Int
                 

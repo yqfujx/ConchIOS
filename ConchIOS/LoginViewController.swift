@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         self.activityIndicator.startAnimating()
 
-        AuthorizationService.service.authenticate(userID: self.userNameField.text!, pwd: pwdField.text!) { (success: Bool, error: NSError?) in
+        ServiceCenter.authorizationService.authenticate(userID: self.userNameField.text!, pwd: pwdField.text!) { (success: Bool, error: NSError?) in
             if success {
                 self.doneHandler?()
             }

@@ -14,7 +14,6 @@ class NetworkService: AFHTTPSessionManager {
     private var sendDispatchQueue: DispatchQueue!
     
     // MARK: - 属性
-    static let service = NetworkService(baseURL: URL(string: AppConfig.serverHost))
     
     override init(baseURL url: URL?, sessionConfiguration configuration: URLSessionConfiguration? = URLSessionConfiguration.default) {
         super.init(baseURL: url, sessionConfiguration: configuration)
@@ -33,7 +32,7 @@ class NetworkService: AFHTTPSessionManager {
      */
    
     func send(request: Request, completionQueue: OperationQueue?, completion: ((Bool, [String: Any]?, SysError?) ->Void)?) -> Bool {
-        if request.requiredAuth, let token = AuthorizationService.service.sessionToken {
+        if request.requiredAuth, let token = ServiceCenter.authorizationService.sessionToken {
             self.requestSerializer.setValue("\(token)", forHTTPHeaderField: "token")
         }
         else {
@@ -96,5 +95,12 @@ class NetworkService: AFHTTPSessionManager {
     
     func send(request: Request, completion: ((Bool, [String: Any]?, SysError?) ->Void)?) -> Bool {
         return send(request: request, completionQueue: OperationQueue.main, completion: completion)
+    }
+    
+    func cancel() -> Void {
+        
+        for task in self.tasks {
+            task.cancel()
+        }
     }
 }
