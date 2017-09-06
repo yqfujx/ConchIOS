@@ -21,14 +21,19 @@ class AuthenticateViewController: UIViewController {
         self.authenticateBtn.isEnabled = false
         self.activityIndicator.startAnimating()
         
-        ServiceCenter.authorizationService.authenticate(completion: { (success: Bool, error: NSError?) in
+        ServiceCenter.authorizationService.authenticate(completion: { [weak self] (success: Bool, error: NSError?) in
+            
+            guard let _self = self else {
+                return
+            }
+            
             if success {
-                self.doneBlock?()
+                _self.doneBlock?()
             }
             else {
-                self.messageLabel.text = error?.localizedDescription
-                self.authenticateBtn.isEnabled = true
-                self.activityIndicator.stopAnimating()
+                _self.messageLabel.text = error?.localizedDescription
+                _self.authenticateBtn.isEnabled = true
+                _self.activityIndicator.stopAnimating()
             }
         })
     }

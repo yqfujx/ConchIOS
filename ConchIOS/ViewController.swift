@@ -22,19 +22,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func logOut(_ sender: Any?) {
         
         let alert = UIAlertController(title: nil, message: "确定要退出当前帐号吗？", preferredStyle: .alert)
-        let positive = UIAlertAction(title: "确定", style: .default) { (actiion: UIAlertAction) in
+        let positive = UIAlertAction(title: "确定", style: .default) { [weak self] (actiion: UIAlertAction) in
             ServiceCenter.cancel()
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "LoginScene") as! LoginViewController
-            controller.doneHandler = { [unowned self] in
+            
+            guard let _self = self else {
+                return
+            }
+            
+            let controller = _self.storyboard?.instantiateViewController(withIdentifier: "LoginScene") as! LoginViewController
+            controller.doneHandler = { [weak self] in
                 controller.dismiss(animated: true, completion: nil)
                 
-                self.requestData()
+                self?.requestData()
             }
-            self.present(controller, animated: false, completion: nil)
+            _self.present(controller, animated: false, completion: nil)
         }
         alert.addAction(positive)
         let negative = UIAlertAction(title: "取消", style: .cancel) { (action: UIAlertAction) in
-            
         }
         alert.addAction(negative)
         self.present(alert, animated: true, completion: nil)
@@ -47,6 +51,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: - 方法
     
     /**
+     系统重置消息
+     */
+    func onResetNotification(noti: Notification) -> Void {
+        ServiceCenter.cancel()
+        
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "LoginScene") as! LoginViewController
+        controller.doneHandler = { [weak self] in
+            controller.dismiss(animated: true, completion: nil)
+            
+            self?.requestData()
+        }
+        self.present(controller, animated: false, completion: nil)
+    }
+    
+    /**
      身份验证
      */
     func authenticate() -> Void {
@@ -54,24 +73,35 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.refreshBtn.isEnabled = false
         self.refreshBtnItem.isEnabled = false
         
-        ServiceCenter.authorizationService.authenticate(completion: { (success: Bool, error: NSError?) in
+        ServiceCenter.authorizationService.authenticate(completion: { [weak self] (success: Bool, error: SysError?) in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            self.refreshBtn.isEnabled = true
-            self.refreshBtnItem.isEnabled = true
+            
+            guard let _self = self else {
+                return
+            }
+            
+            _self.refreshBtn.isEnabled = true
+            _self.refreshBtnItem.isEnabled = true
             
             if success {
-                self.requestData()
+                _self.requestData()
             }
             else {
-                let controller = self.storyboard?.instantiateViewController(withIdentifier: "AuthenticateScene") as! AuthenticateViewController
-                controller.modalTransitionStyle = .crossDissolve
-                controller.doneBlock = { [unowned self] in
-                    controller.dismiss(animated: true, completion: nil)
-                    
-                    self.requestData()
+                switch error!.code {
+                case ResponseCode.userNameOrPasswordError.rawValue, ResponseCode.userNameUnexists.rawValue:
+                    NotificationCenter.default.post(name: NSNotification.Name(Noti_Reset), object: nil)
+                default:
+//                    let controller = self.storyboard?.instantiateViewController(withIdentifier: "AuthenticateScene") as! AuthenticateViewController
+//                    controller.modalTransitionStyle = .crossDissolve
+//                    controller.doneBlock = { [unowned self] in
+//                        controller.dismiss(animated: true, completion: nil)
+//                        
+//                        self.requestData()
+//                    }
+//                    
+//                    self.present(controller, animated: true, completion: nil)
+                    break
                 }
-                
-                self.present(controller, animated: true, completion: nil)
             }
         })
     }
@@ -84,13 +114,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.refreshBtn.isEnabled = false
         self.refreshBtnItem.isEnabled = false
         
-        self.service.requestData { (success: Bool, error: SysError?) in
+        self.service.requestData { [weak self] (success: Bool, error: SysError?) in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            self.refreshBtn.isEnabled = true
-            self.refreshBtnItem.isEnabled = true
+            
+            guard let _self = self else {
+                return
+            }
+            
+            _self.refreshBtn.isEnabled = true
+            _self.refreshBtnItem.isEnabled = true
             
             if success {
-                self.tableView.reloadData()
+                _self.tableView.reloadData()
             }
             else {
                 // 提示错误信息
@@ -99,7 +134,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     ServiceCenter.authorizationService.authenticate(completion: nil)
                 }
             }
-        }
+        } // end of closure
     }
     
     // MARK: -  重载
@@ -107,15 +142,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.title = "待审清单"
+        NotificationCenter.default.addObserver(self, selector: #selector(onResetNotification(noti:)), name: NSNotification.Name(Noti_Reset), object: nil)
         
         let auth = ServiceCenter.authorizationService
         // 未曾登录过要先登录
         if !auth.authenticated {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "LoginScene") as! LoginViewController
-            controller.doneHandler = { [unowned self] in
+            controller.doneHandler = { [weak self] in
                 controller.dismiss(animated: true, completion: nil)
                 
-                self.requestData()
+                self?.requestData()
             }
             self.present(controller, animated: false, completion: nil)
         }
@@ -129,12 +165,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.requestData()
             }
         }
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.init(pushNotification), object: nil, queue: OperationQueue.main) { [weak self] (_: Notification) in
+            self?.requestData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if let indexPath = self.tableView.indexPathForSelectedRow {
-            DispatchQueue.main.async {
-                self.tableView.reloadRows(at: [indexPath], with: .fade)
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadRows(at: [indexPath], with: .fade)
             }
         }
         super.viewWillAppear(animated)
@@ -170,7 +210,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.textLabel0.text = item!.customer
         cell.textLabel1.text = String(format: "%d 袋", item!.damagedCount)
         cell.textLabel2.text = item!.damagedSpec
-        cell.textLabel3.text = item!.submittingTime.string(with: "M-d H:m")
+        cell.textLabel3.text = item!.submittingTime.string(with: "MM-dd HH:mm")
         
         return cell
     }

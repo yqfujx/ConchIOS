@@ -25,7 +25,11 @@ class ExaminationService: NSObject {
     func requestData(completion: ((Bool, SysError?) ->Void)?) -> Void {
         let request = Request.allExamination        
         
-        _ = ServiceCenter.networkService.send(request: request, completionQueue: self.operationQueue, completion: { (success: Bool, dictionary: [String: Any]?, error: NSError?) in
+        _ = ServiceCenter.networkService.send(request: request, completionQueue: self.operationQueue, completion: { [weak self] (success: Bool, dictionary: [String: Any]?, error: SysError?) in
+            guard let _self = self else {
+                return
+            }
+            
             var boolArg = true
             var errorArg: SysError?
             
@@ -34,9 +38,9 @@ class ExaminationService: NSObject {
                 if result == ResponseCode.success.rawValue {
                     if let data = dictionary![ResponseContentKey.data.rawValue] as? [[String: Any]] {
                         // 暂不支持追加方式
-                        self.repository.removeAll()
+                        _self.repository.removeAll()
                         
-                        if self.repository.append(from: data) < 0 {
+                        if _self.repository.append(from: data) < 0 {
                             boolArg = false
                             errorArg = SysError(domain: ErrorDomain.ExaminationService.rawValue, code: ErrorCode.badData.rawValue, userInfo: nil)
                         }
@@ -65,7 +69,11 @@ class ExaminationService: NSObject {
     func examine(item: ExaminationItem, status: ExaminationItem.Status, completion: ((Bool, ExaminationItem?, SysError?) ->Void)?) -> Void {
         let request = Request.examine(item.id, status.rawValue, ServiceCenter.authorizationService.userID!)
         
-        _ = ServiceCenter.networkService.send(request: request, completion: { (success: Bool, dictionary: [String : Any]?, error: SysError?) in
+        _ = ServiceCenter.networkService.send(request: request, completion: { [weak self] (success: Bool, dictionary: [String : Any]?, error: SysError?) in
+            guard let _self = self else {
+                return
+            }
+            
             if success {
                 let result = dictionary![ResponseContentKey.result.rawValue] as! Int
                 if result != ResponseCode.success.rawValue {
@@ -77,11 +85,11 @@ class ExaminationService: NSObject {
                     let processor = data["processor"] as? String,
                     let timeString = data["processTime"] as? String, let processTime = Date(string: timeString, format: "yyyy-MM-dd'T'HH:mm:ss") {
                     
-                    var item = self.repository.item(id: id)!
+                    var item = _self.repository.item(id: id)!
                     item.status = ExaminationItem.Status(rawValue: status)!
                     item.processor = processor
                     item.processTime = processTime
-                    self.repository.update(item: item)
+                    _self.repository.update(item: item)
                     
                     completion?(true, item, nil)
                 }

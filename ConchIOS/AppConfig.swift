@@ -10,7 +10,7 @@ import UIKit
 
 class AppConfig: NSObject {
 
-    static let serverHost = "http://192.134.2.166:49566"
+    static let serverHost = "http://192.134.2.166/Conch"
     static var userID: String? {
         get {
             return UserDefaults.standard.string(forKey: "userID")

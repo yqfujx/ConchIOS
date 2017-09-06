@@ -8,6 +8,9 @@
 
 import Foundation
 
+let pushNotification = "pushNotification"
+let logoutNotification = "logoutNotification"
+
 enum HttpMethod: String {
     case GET = "GET"
     case POST = "POST"
@@ -66,7 +69,7 @@ enum Request {
                 params["appVersion"] = appVersion
             }
             if let deviceToken = deviceToken {
-                params["deviceToken"] = deviceToken
+                params["pushToken"] = deviceToken
             }
         case .allExamination:
             method = .GET
@@ -76,7 +79,7 @@ enum Request {
             path = "api/Examine"
             params = ["id": id]
         case .examine(let id, let status, let processor):
-            method = .PUT
+            method = .POST
             path = "api/Examine"
             params = ["id": id, "processor": processor, "status": status]
         }
@@ -162,3 +165,5 @@ class SysError: NSError {
         }
     }
 }
+
+let Noti_Reset = "Noti_Reset"

@@ -74,18 +74,22 @@ class NetworkService: AFHTTPSessionManager {
         let url = URL(string: path, relativeTo: self.baseURL)?.absoluteString
         let flag: DispatchWorkItemFlags = request.isBarrier ? .barrier : .inheritQoS // 身份验证需要以独占方式调用
         
-        let work = DispatchWorkItem(qos: .userInitiated, flags: flag) {
+        let work = DispatchWorkItem(qos: .userInitiated, flags: flag) { [weak self] in
+            guard let _self = self else {
+                return
+            }
+            
             switch method {
             case .GET:
-                _ = self.get(url!, parameters: params, progress: nil, success: success, failure: failure)
+                _ = _self.get(url!, parameters: params, progress: nil, success: success, failure: failure)
             case .POST:
-                _ = self.post(url!, parameters: params, progress: nil, success: success, failure: failure)
+                _ = _self.post(url!, parameters: params, progress: nil, success: success, failure: failure)
             case .PUT:
-                _ = self.put(url!, parameters: params, success: success, failure: failure)
+                _ = _self.put(url!, parameters: params, success: success, failure: failure)
             case .PATCH:
-                _ = self.patch(url!, parameters: params, success: success, failure: failure)
+                _ = _self.patch(url!, parameters: params, success: success, failure: failure)
             case .DELETE:
-                _ = self.delete(url!, parameters: params, success: success, failure: failure)
+                _ = _self.delete(url!, parameters: params, success: success, failure: failure)
             }
         }
         self.sendDispatchQueue.async(execute: work)

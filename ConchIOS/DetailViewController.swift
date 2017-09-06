@@ -44,13 +44,17 @@ class DetailViewController: UITableViewController {
         _ = service.examine(item: self.item, status: status, completion: { [weak self] (success: Bool, newItem: ExaminationItem?, error: SysError?) in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             
+            guard let _self = self else {
+                return
+            }
+            
             if success {
-                self?.item = newItem!
-                self?.show(item: (self?.item)!)
+                _self.item = newItem!
+                _self.show(item: (_self.item)!)
             }
             else {
-                self?.approveBtn.isEnabled = true
-                self?.rejectBtn.isEnabled = true
+                _self.approveBtn.isEnabled = true
+                _self.rejectBtn.isEnabled = true
                 if error!.code == ResponseCode.unauthorized.rawValue {
                     ServiceCenter.authorizationService.authenticate(completion: nil)
                 }

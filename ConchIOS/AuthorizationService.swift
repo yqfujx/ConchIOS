@@ -69,11 +69,15 @@ class AuthorizationService: NSObject {
     
     // MARK: - 方法
     //
-    func authenticate(userID: String, pwd: String, completion: ((Bool, NSError?) -> Void)?) -> Void {
+    func authenticate(userID: String, pwd: String, completion: ((Bool, SysError?) -> Void)?) -> Void {
         
         let request = Request.login(userID, pwd, client, self.appVersion, self.deviceToken)
         
-        _ = ServiceCenter.networkService.send(request: request) { (success, dictionary, error) in
+        _ = ServiceCenter.networkService.send(request: request) { [weak self] (success, dictionary, error) in
+            guard let _self = self else {
+                return
+            }
+            
             if success {
                 let result = dictionary![ResponseContentKey.result.rawValue] as! Int
                 
@@ -82,11 +86,11 @@ class AuthorizationService: NSObject {
                         let token = data["token"] as? String,
                         let dateString = data["timeout"] as? String {
                         
-                        self.userID = userID
-                        self.password = pwd
-                        self.sessionToken = token
-                        self.expiredTime = Date(string: dateString, format: "yyyy-MM-dd HH:mm:ss")
-                        self.authenticated = true
+                        _self.userID = userID
+                        _self.password = pwd
+                        _self.sessionToken = token
+                        _self.expiredTime = Date(string: dateString, format: "yyyy-MM-dd HH:mm:ss")
+                        _self.authenticated = true
                         
                         completion?(true, nil)
                     }
@@ -106,7 +110,7 @@ class AuthorizationService: NSObject {
         } // closure
     }
     
-    func authenticate(completion: ((Bool, NSError?) -> Void)?) -> Void {
+    func authenticate(completion: ((Bool, SysError?) -> Void)?) -> Void {
         self.authenticate(userID: self.userID!, pwd: self.password!, completion: completion)
     }
 }

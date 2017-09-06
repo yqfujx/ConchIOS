@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		103C0ADC1F5F817A0080C7E1 /* icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 103C0AD01F5F817A0080C7E1 /* icon@3x.png */; };
+		103C0ADD1F5F817A0080C7E1 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 103C0AD11F5F817A0080C7E1 /* icon@2x.png */; };
+		103C0ADE1F5F817A0080C7E1 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 103C0AD21F5F817A0080C7E1 /* icon.png */; };
+		103C0ADF1F5F817A0080C7E1 /* icon_spot@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 103C0AD31F5F817A0080C7E1 /* icon_spot@3x.png */; };
+		103C0AE01F5F817A0080C7E1 /* icon_spot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 103C0AD41F5F817A0080C7E1 /* icon_spot@2x.png */; };
+		103C0AE11F5F817A0080C7E1 /* icon_spot.png in Resources */ = {isa = PBXBuildFile; fileRef = 103C0AD51F5F817A0080C7E1 /* icon_spot.png */; };
+		103C0AE21F5F817A0080C7E1 /* icon_set@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 103C0AD61F5F817A0080C7E1 /* icon_set@3x.png */; };
+		103C0AE31F5F817A0080C7E1 /* icon_set@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 103C0AD71F5F817A0080C7E1 /* icon_set@2x.png */; };
+		103C0AE41F5F817A0080C7E1 /* icon_set.png in Resources */ = {isa = PBXBuildFile; fileRef = 103C0AD81F5F817A0080C7E1 /* icon_set.png */; };
+		103C0AE51F5F817A0080C7E1 /* icon_noti@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 103C0AD91F5F817A0080C7E1 /* icon_noti@3x.png */; };
+		103C0AE61F5F817A0080C7E1 /* icon_noti@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 103C0ADA1F5F817A0080C7E1 /* icon_noti@2x.png */; };
+		103C0AE71F5F817A0080C7E1 /* icon_noti.png in Resources */ = {isa = PBXBuildFile; fileRef = 103C0ADB1F5F817A0080C7E1 /* icon_noti.png */; };
 		1040D5BF1F18A60C0036FCD3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1040D5BE1F18A60C0036FCD3 /* Extension.swift */; };
 		1040D5C11F18B8340036FCD3 /* ServiceCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1040D5C01F18B8340036FCD3 /* ServiceCenter.swift */; };
 		1040D5C41F18BD800036FCD3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1040D5C31F18BD800036FCD3 /* LoginViewController.swift */; };
@@ -53,6 +65,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		103C0AD01F5F817A0080C7E1 /* icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@3x.png"; sourceTree = "<group>"; };
+		103C0AD11F5F817A0080C7E1 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		103C0AD21F5F817A0080C7E1 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		103C0AD31F5F817A0080C7E1 /* icon_spot@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_spot@3x.png"; sourceTree = "<group>"; };
+		103C0AD41F5F817A0080C7E1 /* icon_spot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_spot@2x.png"; sourceTree = "<group>"; };
+		103C0AD51F5F817A0080C7E1 /* icon_spot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_spot.png; sourceTree = "<group>"; };
+		103C0AD61F5F817A0080C7E1 /* icon_set@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_set@3x.png"; sourceTree = "<group>"; };
+		103C0AD71F5F817A0080C7E1 /* icon_set@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_set@2x.png"; sourceTree = "<group>"; };
+		103C0AD81F5F817A0080C7E1 /* icon_set.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_set.png; sourceTree = "<group>"; };
+		103C0AD91F5F817A0080C7E1 /* icon_noti@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_noti@3x.png"; sourceTree = "<group>"; };
+		103C0ADA1F5F817A0080C7E1 /* icon_noti@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_noti@2x.png"; sourceTree = "<group>"; };
+		103C0ADB1F5F817A0080C7E1 /* icon_noti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_noti.png; sourceTree = "<group>"; };
 		1040D5BE1F18A60C0036FCD3 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		1040D5C01F18B8340036FCD3 /* ServiceCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCenter.swift; sourceTree = "<group>"; };
 		1040D5C31F18BD800036FCD3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +101,7 @@
 		105B86AF1F1F0C5700506160 /* large_glyph_empty_queue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = large_glyph_empty_queue.png; sourceTree = "<group>"; };
 		105B86B01F1F0C5700506160 /* large_glyph_empty_queue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "large_glyph_empty_queue@2x.png"; sourceTree = "<group>"; };
 		10837E281F1C51E000B84786 /* ExaminationItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExaminationItemCell.swift; sourceTree = "<group>"; };
+		10AD1C4B1F4C2CDB006AB6B0 /* ConchIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ConchIOS.entitlements; sourceTree = "<group>"; };
 		10AEB2D11F1B5B7A00E5B801 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		10FB3FD01F192736000F6453 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		10FB3FD11F192736000F6453 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
@@ -160,6 +185,7 @@
 		1058124D1F15AF940022D472 /* ConchIOS */ = {
 			isa = PBXGroup;
 			children = (
+				10AD1C4B1F4C2CDB006AB6B0 /* ConchIOS.entitlements */,
 				1040D5C21F18BD170036FCD3 /* View */,
 				105812851F15C0FF0022D472 /* Model */,
 				105812811F15B2920022D472 /* Service */,
@@ -224,6 +250,18 @@
 		10FB3FCF1F192736000F6453 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				103C0AD01F5F817A0080C7E1 /* icon@3x.png */,
+				103C0AD11F5F817A0080C7E1 /* icon@2x.png */,
+				103C0AD21F5F817A0080C7E1 /* icon.png */,
+				103C0AD31F5F817A0080C7E1 /* icon_spot@3x.png */,
+				103C0AD41F5F817A0080C7E1 /* icon_spot@2x.png */,
+				103C0AD51F5F817A0080C7E1 /* icon_spot.png */,
+				103C0AD61F5F817A0080C7E1 /* icon_set@3x.png */,
+				103C0AD71F5F817A0080C7E1 /* icon_set@2x.png */,
+				103C0AD81F5F817A0080C7E1 /* icon_set.png */,
+				103C0AD91F5F817A0080C7E1 /* icon_noti@3x.png */,
+				103C0ADA1F5F817A0080C7E1 /* icon_noti@2x.png */,
+				103C0ADB1F5F817A0080C7E1 /* icon_noti.png */,
 				105B86AF1F1F0C5700506160 /* large_glyph_empty_queue.png */,
 				105B86B01F1F0C5700506160 /* large_glyph_empty_queue@2x.png */,
 				10FB3FD01F192736000F6453 /* bg.png */,
@@ -335,6 +373,11 @@
 						DevelopmentTeam = 6JSJY22BTE;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					1058125E1F15AF940022D472 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -377,11 +420,23 @@
 			files = (
 				105B86B11F1F0C5700506160 /* large_glyph_empty_queue.png in Resources */,
 				105812591F15AF940022D472 /* LaunchScreen.storyboard in Resources */,
+				103C0ADC1F5F817A0080C7E1 /* icon@3x.png in Resources */,
+				103C0AE61F5F817A0080C7E1 /* icon_noti@2x.png in Resources */,
+				103C0AE41F5F817A0080C7E1 /* icon_set.png in Resources */,
 				105B86B21F1F0C5700506160 /* large_glyph_empty_queue@2x.png in Resources */,
+				103C0AE31F5F817A0080C7E1 /* icon_set@2x.png in Resources */,
 				105812561F15AF940022D472 /* Assets.xcassets in Resources */,
+				103C0AE51F5F817A0080C7E1 /* icon_noti@3x.png in Resources */,
 				10FB3FD21F192736000F6453 /* bg.png in Resources */,
+				103C0ADE1F5F817A0080C7E1 /* icon.png in Resources */,
+				103C0AE01F5F817A0080C7E1 /* icon_spot@2x.png in Resources */,
+				103C0ADF1F5F817A0080C7E1 /* icon_spot@3x.png in Resources */,
 				105812541F15AF940022D472 /* Main.storyboard in Resources */,
 				10FB3FD31F192736000F6453 /* bg@2x.png in Resources */,
+				103C0ADD1F5F817A0080C7E1 /* icon@2x.png in Resources */,
+				103C0AE71F5F817A0080C7E1 /* icon_noti.png in Resources */,
+				103C0AE11F5F817A0080C7E1 /* icon_spot.png in Resources */,
+				103C0AE21F5F817A0080C7E1 /* icon_set@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,7 +708,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -697,7 +752,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -711,9 +766,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ConchIOS/ConchIOS.entitlements;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6JSJY22BTE;
 				INFOPLIST_FILE = ConchIOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zonjli.ConchIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -729,9 +787,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ConchIOS/ConchIOS.entitlements;
 				DEVELOPMENT_TEAM = 6JSJY22BTE;
 				INFOPLIST_FILE = ConchIOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zonjli.ConchIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";

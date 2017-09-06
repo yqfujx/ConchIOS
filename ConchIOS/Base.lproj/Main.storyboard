@@ -627,17 +627,6 @@
                                                 <action selector="textFieldEditingChanged:" destination="JhZ-PT-zyk" eventType="editingChanged" id="WZd-ah-hAe"/>
                                             </connections>
                                         </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入用户名" textAlignment="natural" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ock-hM-jkW">
-                                            <rect key="frame" x="61" y="216" width="252" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
-                                            <connections>
-                                                <action selector="returnKeyTapped:" destination="JhZ-PT-zyk" eventType="editingDidEndOnExit" id="fp2-Ot-EBT"/>
-                                                <action selector="textFieldEditingChanged:" destination="JhZ-PT-zyk" eventType="editingChanged" id="igK-9W-BVm"/>
-                                            </connections>
-                                        </textField>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入密码" textAlignment="natural" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1De-Hi-udR">
                                             <rect key="frame" x="61" y="254" width="252" height="30"/>
                                             <nil key="textColor"/>
@@ -649,20 +638,23 @@
                                             </connections>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7X-f3-F2U">
-                                            <rect key="frame" x="61" y="292" width="252" height="30"/>
+                                            <rect key="frame" x="61" y="292" width="252" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="rBE-NU-jXL"/>
+                                            </constraints>
                                             <state key="normal" title="登录"/>
                                             <connections>
                                                 <action selector="loginBtnTapped:" destination="JhZ-PT-zyk" eventType="touchUpInside" id="Fug-hs-RTh"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVx-t4-Eqz">
-                                            <rect key="frame" x="187" y="330" width="0.0" height="0.0"/>
+                                            <rect key="frame" x="187" y="340" width="0.0" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.95537930727005005" green="0.027801735326647758" blue="0.1764349639415741" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="0io-vW-MHa">
-                                            <rect key="frame" x="169" y="349" width="37" height="37"/>
+                                            <rect key="frame" x="169" y="359" width="37" height="37"/>
                                             <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </activityIndicatorView>
                                     </subviews>
@@ -697,7 +689,7 @@
                         <outlet property="loginBtn" destination="J7X-f3-F2U" id="OJl-w6-58Z"/>
                         <outlet property="messageLabel" destination="FVx-t4-Eqz" id="RYb-X1-kA5"/>
                         <outlet property="pwdField" destination="1De-Hi-udR" id="wof-0l-QI9"/>
-                        <outlet property="userNameField" destination="Ock-hM-jkW" id="QYB-41-qNL"/>
+                        <outlet property="userNameField" destination="wL3-S5-zYj" id="RM6-lU-dFy"/>
                         <outlet property="view" destination="a7S-x3-RIU" id="Gis-ZQ-rbF"/>
                     </connections>
                 </viewController>

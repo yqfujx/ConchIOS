@@ -31,19 +31,24 @@ class LoginViewController: UIViewController {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         self.activityIndicator.startAnimating()
 
-        ServiceCenter.authorizationService.authenticate(userID: self.userNameField.text!, pwd: pwdField.text!) { (success: Bool, error: NSError?) in
-            if success {
-                self.doneHandler?()
-            }
-            else {
-                self.loginBtn.isEnabled = true
-                self.userNameField.isEnabled = true
-                self.pwdField.isEnabled = true
-                self.messageLabel.text = error?.localizedDescription
+        ServiceCenter.authorizationService.authenticate(userID: self.userNameField.text!, pwd: pwdField.text!) { [weak self] (success: Bool, error: NSError?) in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            
+            guard let _self = self else {
+                return
             }
             
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            self.activityIndicator.stopAnimating()
+            if success {
+                _self.doneHandler?()
+            }
+            else {
+                _self.loginBtn.isEnabled = true
+                _self.userNameField.isEnabled = true
+                _self.pwdField.isEnabled = true
+                _self.messageLabel.text = error?.localizedDescription
+            }
+            
+            _self.activityIndicator.stopAnimating()
         }
     }
     
@@ -74,6 +79,10 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.loginBtn.isEnabled = false
+        self.loginBtn.setBackground(color: UIColor(red: 5.0 / 255.0, green: 122.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0), forState: .normal)
+        self.loginBtn.setBackground(color: UIColor(white: 0.9, alpha: 1.0), forState: .disabled)
+        self.loginBtn.setTitleColor(UIColor.white, for: .normal)
+        self.loginBtn.setTitleColor(UIColor.gray, for: .disabled)
     }
 
     override func didReceiveMemoryWarning() {
